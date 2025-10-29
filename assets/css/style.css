@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+html {
+  box-sizing: border-box;
+  min-height: 100vh;
+  max-width: 100vw;
+}
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  cursor: pointer;
+  color: black;
+}
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 4px 8px rgba(82, 81, 81, 0.375);
+  background: #fff;
+  z-index: 99;
+}
+
+.logo {
+  color: dodgerblue;
+  font-size: 1.6em;
+  z-index: 100;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 100vw;
+  min-height: 100vh;
+  width: 100%;
+  background: #fff;
+  z-index: 97;
+  opacity: 0;
+  transition: 750ms ease-in-out;
+}
+
+.nav.opened {
+  left: 0;
+  opacity: 1;
+}
+
+.nav-ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: inherit;
+}
+
+.nav-li-a {
+  font-weight: 300;
+}
+
+.nav-li-a:hover {
+  color: dodgerblue;
+}
+
+.menuBtn {
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: transparent;
+  z-index: 100;
+}
+
+.menuBtn i {
+  font-size: 2em;
+}
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.hero {
+  background: url(/assets/imgs/bottomsea.jpg) center / cover;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.hero-content {
+  background: rgba(2, 2, 2, 0.4);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 2em;
+  text-align: center;
+}
+
+.featured {
+  min-height: 100vh;
+  width: 100%;
+  padding: 2em 0;
+}
+
+.featured-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.featured-content {
+  width: 300px;
+  height: 250px;
+  background: rgb(199, 215, 235);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 2px 2px black, -1px -2px 4px black;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+}
+
+.featured-item {
+  font-size: 1.5em;
+}
+
+/* ABOUT */
+
+#about .about-us {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2em;
+  padding: 1em;
+}
+
+#about article h3 {
+  text-decoration: underline;
+}
+
+#about .the-team {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2em 0;
+}
+
+#about .team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  padding: 1em 0;
+}
+
+#about .team-item {
+  text-align: center;
+  box-shadow: 1px 1px 3px black;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+#about .team-item:hover {
+  box-shadow: 1px 1px 4px dodgerblue;
+}
+
+#about .team-item:active {
+  animation: slideUp 750ms ease-in-out;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY();
+  }
+}
+
+#about .team-member-img {
+  height: 250px;
+}
+
+/* EVENTS */
+
+#events .main {
+  padding: 10px;
+}
+
+#event-main section {
+  width: 100%;
+  text-align: center;
+}
+
+#event-main section a {
+  border: 1px solid dodgerblue;
+  border-radius: 30px;
+  padding: 5px 20px;
+  background: dodgerblue;
+  color: #fff;
+  box-shadow: 1px 1px 2px black;
+}
+.schedule {
+  border: 1px solid black;
+  padding: 3em 5px;
+  border-collapse: collapse;
+}
+
+th,
+tr td {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+tr td:nth-child(1) {
+  font-size: 1.3em;
+  color: rgb(8, 94, 180);
+}
+
+.footer {
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .nav {
+    all: unset;
+  }
+  .nav-ul {
+    flex-direction: row;
+  }
+
+  .menuBtn {
+    display: none;
+  }
+}
