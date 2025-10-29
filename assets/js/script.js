@@ -2,6 +2,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const nav = document.getElementById("nav");
   const menuBtn = document.getElementById("menuBtn");
   const mainEvent = document.getElementById("event-main");
+
+  if (menuBtn && nav) {
+    menuBtn.addEventListener("click", () => {
+      nav.classList.toggle("opened");
+      menuBtn.innerHTML = nav.classList.contains("opened")
+        ? `<i class="fa-solid fa-circle-xmark"></i>`
+        : `<i class="fa-solid fa-bars"></i>`;
+    });
+  }
+
   if (!mainEvent) return;
 
   const section = document.createElement("section");
@@ -94,13 +104,4 @@ document.addEventListener("DOMContentLoaded", () => {
   renderSchedule();
 
   window.addEventListener("resize", renderSchedule);
-
-  if (menuBtn && nav) {
-    menuBtn.addEventListener("click", () => {
-      nav.classList.toggle("opened");
-      menuBtn.innerHTML = nav.classList.contains("opened")
-        ? `<i class="fa-solid fa-circle-xmark"></i>`
-        : `<i class="fa-solid fa-bars"></i>`;
-    });
-  }
 });
