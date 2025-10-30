@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const nav = document.getElementById("nav");
   const menuBtn = document.getElementById("menuBtn");
-  const mainEvent = document.getElementById("event-main");
+  const eventSchedule = document.getElementById("event-schedule");
 
   if (menuBtn && nav) {
     menuBtn.addEventListener("click", () => {
@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (!mainEvent) return;
+  if (!eventSchedule) return;
 
-  const section = document.createElement("section");
-  mainEvent.appendChild(section);
+  const article = document.createElement("article");
+  eventSchedule.appendChild(article);
 
   const tableHtml = `
     <table id="schedule" class="schedule">
@@ -94,10 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderSchedule() {
     if (window.innerWidth < 992) {
-      section.innerHTML = "";
-      section.appendChild(link);
+      article.innerHTML = "";
+      article.appendChild(link);
     } else {
-      section.innerHTML = tableHtml;
+      article.innerHTML = tableHtml;
     }
   }
 
